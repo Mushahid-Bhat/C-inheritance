@@ -1,0 +1,51 @@
+#include <iostream>
+#include<string.h>
+using namespace std;
+class student{
+    protected:
+    string name;
+    int rollno;
+    string batch;
+    int session;
+    public:
+    void getinput(){
+        cout<<"enter name,rollno,batch and session of student "<<"\n";
+        cin>>name>>rollno>>batch>>session;
+    }
+    void showdata(){
+        cout<<name<< "\t"<<rollno<<"\t"<<batch<<"\t"<<session<<"\n";
+    }
+    };
+    class test {
+      protected:
+      int marks;
+      string subject;
+      public:
+      void getdata(){
+         cout<<"enter marks and subject"<<  "\n" ;
+         cin>> marks>>subject;
+      }
+      void showdata1(){
+          cout<<marks<<"\t"<<subject<<"\t";
+      }
+    };
+    class result :public student,public test{
+        public:
+        void result1(){
+            if(marks>33)
+            cout<<"pass";
+            else
+            cout<<"fail";
+        }
+    };
+int main() {
+    result a;
+    a.getinput();
+    a.showdata();
+    a.getdata();
+    a.showdata1();
+    a.result1();
+   
+    
+    return 0;
+}
